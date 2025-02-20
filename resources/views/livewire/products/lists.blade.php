@@ -59,6 +59,7 @@
             <tr>
                 <th scope="col" class="px-6 py-3">Image</th>
                 <th scope="col" class="px-6 py-3">Title</th>
+                <th scope="col" class="px-6 py-3">Category</th>
                 <th scope="col" class="px-6 py-3">Price</th>
                 <th scope="col" class="px-6 py-3">Stock</th>
                 <th scope="col" class="px-6 py-3">Action</th>
@@ -71,6 +72,7 @@
                         <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{ $product->title }}" class="w-8 h-8 md:w-16 md:h-16">
                     </th>
                     <td class="px-6 py-4 truncate max-w-32">{{ $product->title }}</td>
+                    <td class="px-6 py-4">{{ $product->category->name }}</td>
                     <td class="px-6 py-4">${{ $product->price }}</td>
                     <td class="px-6 py-4">{{ $product->stock }}</td>
                     <td class="px-6 py-4">

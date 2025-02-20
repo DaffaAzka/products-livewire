@@ -15,7 +15,7 @@ class Lists extends Component
 
     public function render()
     {
-        $products = Product::paginate(4);
+        $products = Product::with('category')->paginate(4);
         return view('livewire.products.lists', ['products' => $products]);
     }
 }
