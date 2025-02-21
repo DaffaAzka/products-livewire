@@ -24,4 +24,12 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('title', 'like', '%' . $query . '%')
+                ->orWhere('description', 'like', '%' . $query . '%')
+                ->orWhere('category_id', 'like', '%' . $query . '%');
+    }
 }

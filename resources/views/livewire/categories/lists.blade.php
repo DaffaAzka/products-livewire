@@ -46,6 +46,7 @@
                     <td class="px-6 py-4">{{ $category->description }}</td>
                     <td class="px-6 py-4">
                         <div class="flex space-x-2">
+                            <a href="{{ route('products.lists') }}?category={{ $category->id }}" class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 delete-link">Products</a>
                             <button wire:click="$dispatch('editSelected', { idcategory: '{{ $category->id }}' })"" data-modal-toggle="edit-modal" data-modal-target="edit-modal" class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300 edit-link" data-id="{{ $category->id }}">Edit</button>
                             <a data-modal-toggle="popup-modal" href="" class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300 delete-link" data-id="{{ $category->id }}">Delete</a>
                         </div>
